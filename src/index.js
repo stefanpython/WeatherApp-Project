@@ -1,7 +1,7 @@
 async function getWeather() {
   try {
     const response = await fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=Bucharest&APPID=62ab457233b8c68e94ef44e9b7be882d&units=metric"
+      "https://api.openweathermap.org/data/2.5/weather?q=Nigeria&APPID=62ab457233b8c68e94ef44e9b7be882d&units=metric"
     );
     const weatherData = await response.json();
 
@@ -11,61 +11,37 @@ async function getWeather() {
   }
 }
 
-function aData() {
-  getWeather().then((data) => {
-    console.log(data);
-    // Temperatures
-    console.log(data.main);
-    // data.main.temp
-    // data.main.feels_like
-    // data.main.temp_min
-    // data.main.temp_max
-    // data.main.pressure
-    // data.main.humidity
-
-    // Name
-    console.log(data.name);
-
-    // Sys
-    console.log(data.sys);
-    // data.sys.country
-    // data.sys.sunrise - convert to new Date()
-    // data.sys.sunset - convert
-
-    // Sky status
-    console.log(data.weather[0]);
-    // data.weather[0].description
-
-    // Wind
-    console.log(data.wind);
-    // data.wind.speed
-    // data.wind.deg
-
-    // Coordonates
-    console.log(data.coord);
-    // data.coord.lon
-    // data.coord.lat
-  });
-}
-aData();
+// const btn = document.querySelector(".btn");
+// btn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const searchValue = document.querySelector("#searchInput");
+//   console.log(searchValue.value);
+// });
 
 // Temperatures
 function tempData() {
   getWeather().then((data) => {
-    // data.main.temp
-    // data.main.feels_like
-    // data.main.temp_min
-    // data.main.temp_max
-    // data.main.pressure
-    // data.main.humidity
+    const temp = document.getElementById("temp");
+    temp.innerText = `Temp: ${Math.round(data.main.temp)}°C`;
+    const feelsLike = document.getElementById("feelslike");
+    feelsLike.innerText = `Feels like: ${Math.round(data.main.feels_like)}°C`;
+    const tempmin = document.getElementById("tempmin");
+    tempmin.innerText = `Min temp: ${Math.round(data.main.temp_min)}°C`;
+    const tempmax = document.getElementById("tempmax");
+    tempmax.innerText = `Min temp: ${Math.round(data.main.temp_max)}°C`;
+    const pressure = document.getElementById("pressure");
+    pressure.innerText = `Pressure: ${Math.round(data.main.pressure)}`;
+    const humidity = document.getElementById("humidity");
+    humidity.innerText = `Humidity: ${Math.round(data.main.humidity)}%`;
   });
 }
 tempData();
 
 // City name
 function cityNameData() {
-  getWeather((data) => {
-    // data.name
+  getWeather().then((data) => {
+    const cityName = document.getElementById("city-name");
+    cityName.innerText = data.name;
   });
 }
 cityNameData();
@@ -73,9 +49,10 @@ cityNameData();
 // Country Sunrise Sunset
 function countryData() {
   getWeather().then((data) => {
-    // data.sys.country
-    // data.sys.sunrise - convert to new Date()
-    // data.sys.sunset - convert
+    const sunrise = document.getElementById("sunrise");
+    sunrise.innerText = `Longitute: ${data.coord.lon}`;
+    const sunset = document.getElementById("sunset");
+    sunset.innerText = `Latitude: ${data.coord.lat}`;
   });
 }
 countryData();
@@ -83,7 +60,8 @@ countryData();
 // Sky description
 function skyData() {
   getWeather().then((data) => {
-    // data.weather[0].description
+    const description = document.getElementById("description");
+    description.innerText = data.weather[0].description;
   });
 }
 skyData();
@@ -92,24 +70,18 @@ skyData();
 function windData() {
   getWeather().then((data) => {
     // data.wind.speed
-    // data.wind.deg
+    const wind = document.getElementById("wind");
+    wind.innerText = `Wind: ${Math.round(data.wind.speed)} Km/h`;
   });
 }
 
 windData();
 
-// Coordonates data
-function coordonatesData() {
-  getWeather().then((data) => {
-    // data.coord.lon
-    // data.coord.lat
-  });
-}
-coordonatesData();
-
 function iconData() {
   getWeather().then((data) => {
     // data.weather[0].icon
+    const iconImage = document.getElementById("icon-img");
+    iconImage.src = `icons/${data.weather[0].icon}.png`;
   });
 }
 
