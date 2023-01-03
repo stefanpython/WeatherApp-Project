@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Junge&family=Noto+Nastaliq+Urdu&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Junge&family=Merienda+One&family=Noto+Nastaliq+Urdu&family=Rammetto+One&family=Rubik+Moonrocks&display=swap");
 #backgroundImg {
   /* Set rules to fill background */
   min-height: 100%;
@@ -73,8 +72,9 @@
   margin-right: auto;
   margin-bottom: -10%;
   margin-top: 15%;
-  width: 300px;
+  width: 320px;
   height: 300px;
+  overflow: auto;
 }
 
 #icon-img {
@@ -98,9 +98,10 @@ p {
 }
 
 h4 {
-  margin-left: 150px;
-  margin-top: -75px;
+  margin-left: 170px;
+  margin-top: -45px;
   font-family: "Noto Nastaliq Urdu", serif;
+  color: rgb(33, 63, 197);
 }
 
 .sunP {
@@ -113,11 +114,23 @@ h4 {
   margin-left: 90px;
 }
 
-p:hover {
-  transform: scale(1.7);
-  transition: 0.5s;
-  background-color: blanchedalmond;
-  width: 160px;
-  border-radius: 10px;
-  color: brown;
+.error {
+  margin-top: 5px;
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 50px;
+}
+
+#title {
+  position: relative;
+  background: #cfe7fa;
+  background: linear-gradient(to right, #cfe7fa 0%, #ffca61 50%, #6393c1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-family: "Merienda One", cursive;
+  display: flex;
+  justify-content: center;
+  border-radius: 3em;
 }
