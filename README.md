@@ -2,4 +2,4 @@
 
 ### Learning curve: using API`s with async/await
 
-[Demo](https://github.com/stefanpython/WeatherApp-Project)
+[Demo](https://stefanpython.github.io/WeatherApp-Project/)
