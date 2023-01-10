@@ -1,7 +1,7 @@
 async function getWeather() {
   try {
     if (!inputBox.value) {
-      inputBox.value = "London";
+      inputBox.value = "Jamaica";
     }
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputBox.value}&APPID=62ab457233b8c68e94ef44e9b7be882d&units=metric`,
