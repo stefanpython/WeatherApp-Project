@@ -51,6 +51,7 @@
   border: none;
   font-size: 17px;
   border-radius: 0.5em;
+  margin-left: 15px;
 }
 
 .fa:hover {
@@ -59,7 +60,7 @@
 }
 
 #content-box {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.432);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.1px);
@@ -67,13 +68,14 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   height: 6em;
   border-radius: 1.5em;
+  padding-left: 10px;
 
   margin-left: auto;
   margin-right: auto;
   margin-bottom: -10%;
   margin-top: 15%;
-  width: 320px;
-  height: 300px;
+  width: 340px;
+  height: 330px;
   overflow: auto;
 }
 
@@ -88,6 +90,7 @@
   margin-top: -20px;
   margin-left: 10px;
   font-family: "Noto Nastaliq Urdu", serif;
+  color: #ccc6b9;
 }
 
 p {
@@ -99,9 +102,9 @@ p {
 
 h4 {
   margin-left: 170px;
-  margin-top: -45px;
+  margin-top: -75px;
   font-family: "Noto Nastaliq Urdu", serif;
-  color: rgb(33, 63, 197);
+  color: rgb(46, 216, 216);
 }
 
 .sunP {
@@ -133,4 +136,8 @@ h4 {
   display: flex;
   justify-content: center;
   border-radius: 3em;
+}
+
+#content-box > p {
+  color: #ffb011;
 }
